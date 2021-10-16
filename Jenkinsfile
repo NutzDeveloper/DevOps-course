@@ -8,9 +8,12 @@ pipeline {
             }
         }
 		stage ('Test') {
+		    agent {
+        docker { image 'pytest' }
+    }	
 			steps {
 				echo "Running the test"
-				sh 'docker run -ti pytest'
+				
 			}
 		}
 		}
