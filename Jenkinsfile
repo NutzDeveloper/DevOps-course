@@ -20,6 +20,8 @@ pipeline {
 			always 
 			{
 				echo "Pipeline ended"
+				echo "Deleting image"
+				sh 'docker image rm -f pytest'
 
 			}
 			
