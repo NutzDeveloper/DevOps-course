@@ -13,6 +13,7 @@ pipeline {
 				sh 'docker run -ti pytest'
 			}
 		}
+		}
 		
 		post
 		{
@@ -35,4 +36,3 @@ pipeline {
 
 
     }
-}
