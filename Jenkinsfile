@@ -22,6 +22,7 @@ pipeline {
 				echo "Pipeline ended"
 				echo "Deleting image"
 				sh 'docker image rm -f pytest'
+				sh 'docker container prune -f'
 
 			}
 			
