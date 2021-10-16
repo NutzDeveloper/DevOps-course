@@ -1,10 +1,9 @@
 pipeline {
     agent any 
     stages {
-        stage('Build') { 
+        stage('Retrieving the script') { 
             steps {
-                echo "Building app"
-				sh "ls -l"
+                echo "Retrieving script"
             }
         }
 
