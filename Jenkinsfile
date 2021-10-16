@@ -1,11 +1,37 @@
 pipeline {
     agent any 
     stages {
-        stage('Retrieving the script') { 
+        stage('Build') { 
             steps {
-                echo "Retrieving script"
+                echo "Building docker image"
+				sh 'docker build . -t pytest'
             }
         }
+		stage ('Test') {
+			steps {
+				echo "Running the test"
+				sh 'docker run -ti pytest'
+			}
+		}
+		
+		post
+		{
+			always 
+			{
+				echo "Pipeline ended"
+
+			}
+			
+			failure 
+			{
+				echo "Pipeline failed"
+			}
+			
+			success
+			{
+				echo "Pipeline succeeded"
+			}
+		}
 
 
     }
