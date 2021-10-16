@@ -1,9 +1,10 @@
 pipeline {
     agent any 
     stages {
-        stage('pytest') { 
+        stage('Build') { 
             steps {
-                sh "python3 app.py"
+                echo "Building app"
+				sh "ls -l"
             }
         }
 
