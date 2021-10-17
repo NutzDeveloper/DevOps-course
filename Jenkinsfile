@@ -7,9 +7,7 @@ pipeline {
 			steps {
 
 				echo "Installing Dependencies"
-				sh 'echo HOME'
-				sh 'echo WORKDIR'
-				sh 'echo $HOME'
+				sh 'echo $HOME'	
 				sh 'echo $WORKDIR'
 				sh 'pip install pytest'
 			}
