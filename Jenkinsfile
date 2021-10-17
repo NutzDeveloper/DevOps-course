@@ -9,6 +9,7 @@ pipeline {
 				echo "Installing Dependencies"
 				sh 'echo $HOME'	
 				sh 'echo $WORKDIR'
+				sh 'pwd'
 				sh 'pip install pytest'
 			}
 		}
