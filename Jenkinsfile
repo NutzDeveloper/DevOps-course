@@ -19,13 +19,12 @@ pipeline {
 			}
 		stage ('Kubernetes')
 		{
-			steps
-			{
-				kubeconfig(credentialsId: 'jenkins', serverUrl: 'http://192.168.186.156:6443') {
-					// some block
-				}
-		
+			steps {
+							kubeconfig(credentialsId: 'jenkins', serverUrl: 'http://192.168.186.156:6443') {
+    // some block
 	}
+			}
+		}
 	}
 		
 		post
