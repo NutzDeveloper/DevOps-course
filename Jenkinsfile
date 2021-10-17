@@ -5,7 +5,9 @@ pipeline {
     stages {
 		stage ('Preperation') {
 			steps {
+
 				echo "Installing Dependencies"
+				sh 'PATH=${PATH}:/usr/local/bin'
 				sh 'sudo pip install pytest'
 			}
 		}
