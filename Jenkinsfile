@@ -9,7 +9,7 @@ pipeline {
 				echo "Installing Dependencies"
 				
 				sh 'pip install pytest --target $WORKSPACE --upgrade'
-				sh 'python -m'
+				sh 'python -m pytest'
 			}
 		}
 		stage ('Test') {
