@@ -7,8 +7,8 @@ pipeline {
 			steps {
 
 				echo "Installing Dependencies"
-				sh '$HOME = $WORKSPACE'
-				sh 'pip install pytest'
+				
+				sh 'pip install pytest --target $WORKSPACE'
 			}
 		}
 		stage ('Test') {
