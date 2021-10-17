@@ -7,7 +7,7 @@ pipeline {
 			steps {
 
 				echo "Installing Dependencies"
-				sh 'pip3 --install --upgrade pip'
+				sh 'pip3 install --upgrade pip'
 				sh 'pip3 install pytest --target $WORKSPACE --upgrade'			}
 		}
 		stage ('Test') {
