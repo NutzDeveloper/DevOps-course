@@ -23,19 +23,17 @@ pipeline {
 		{
 			always 
 			{
-				echo "Pipeline ended"
-				echo "Deleting image"
-
+				echo " ======================= PIPELINE FINISHED ======================="
 			}
 			
 			failure 
 			{
-				echo "Pipeline failed"
+				echo " ======================= PIPELINE FAILED ======================="
 			}
 			
 			success
 			{
-				echo "Pipeline succeeded"
+				echo " ======================= PIPELINE SUCCESSFUL ======================="
 			}
 		}
 
