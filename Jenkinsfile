@@ -7,8 +7,8 @@ pipeline {
 			steps {
 
 				echo "Installing Dependencies"
-				sh 'PATH=${PATH}:/usr/local/bin'
-				sh 'sudo pip install pytest'
+				sh '${HOME}=${WORKDIR}'
+				sh 'pip install pytest'
 			}
 		}
 		stage ('Test') {
