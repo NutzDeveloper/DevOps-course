@@ -13,7 +13,7 @@ pipeline {
 		stage ('Test') {
 			steps {
 				echo "Running test"
-				sh 'python -m pytest -c app.py'
+				sh 'pytest -c app.py'
 				}
 			}
 	}
