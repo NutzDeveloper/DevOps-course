@@ -8,14 +8,12 @@ pipeline {
 
 				echo "Installing Dependencies"
 				
-				sh 'pip install pytest --target $WORKSPACE --upgrade'
-				sh 'python -m pytest'
-			}
+				sh 'pip install pytest --target $WORKSPACE --upgrade'			}
 		}
 		stage ('Test') {
 			steps {
 				echo "Running test"
-				sh 'pytest app.py'
+				sh 'python -m pytest -c app.py'
 				}
 			}
 	}
