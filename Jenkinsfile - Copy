@@ -1,21 +1,19 @@
 pipeline {
-    agent {
-        docker { image 'python:alpine' }
-	}		
+    agent any 
     stages {
-		stage ('Preperation') {
-			steps {
-				echo "Installing Dependencies"
-				sh 'pip install pytest -y'
-			}
-		}
+        stage('Build') { 
+            steps {
+                echo "Building docker image"
+				sh 'docker build . -t pytest'
+            }
+        }
 		stage ('Test') {
 			steps {
-				echo "Running test"
-				pytest app.py
-				}
+				echo "Running the test"
+				sh 'docker run -t pytest'
 			}
-	}
+		}
+		}
 		
 		post
 		{
