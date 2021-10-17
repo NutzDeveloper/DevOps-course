@@ -14,7 +14,7 @@ pipeline {
 		stage ('Test') {
 			steps {
 				echo "Running test"
-				pytest app.py
+				python app.py
 				}
 			}
 	}
