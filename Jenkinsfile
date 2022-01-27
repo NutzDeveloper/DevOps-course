@@ -6,14 +6,13 @@ pipeline {
 		stage ('Preperation') {
 			steps {
 
+			 withEnv(["HOME=${env.WORKSPACE}"]) {
 				echo "Installing Dependencies"
-<<<<<<< HEAD
-				sh 'pip3 install pytest --upgrade'			}
-				}
-=======
 				sh 'pip3 install --upgrade pip'
-				sh 'pip3 install pytest --target $WORKSPACE --upgrade'			}
->>>>>>> parent of 3c22349 (Update Jenkinsfile)
+				sh 'pip3 install pytest --target $WORKSPACE --upgrade'			
+				sh 'pip3 install pytest --upgrade'			
+				}
+			}
 		}
 		stage ('Test') {
 			steps {
