@@ -26,7 +26,7 @@ pipeline {
 			{
 				script 
 				{
-					kubernetesDeploy(configs: "test.yaml", kubeconfigId: "kubeconfig")
+					kubernetesDeploy(configs: "test.yaml", kubeconfigId: "kubekube")
 				}
 			}
 		}
